@@ -1,0 +1,22 @@
+[project]
+name = 'hashwire'
+dynamic = [
+    'version'
+]
+description = 'Hashwire creates a optimized hash multichain commitment'
+readme = 'README.md'
+authors = [
+    { name = 'Hugo Labraaten', email='hugokinner@gmail.com' },
+]
+license = {file = 'LICENSE'},
+dependencies = [
+]
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'License :: OSI Approved :: MIT License',
+    "Programming Language :: Python"
+    'Programming Language :: Python :: 3',
+]
+
+[project.urls]
+repository = 'https://github.com/Hugloss/hashWire'

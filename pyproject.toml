@@ -1,3 +1,11 @@
+[build-system]
+requires = [
+    # First version of setuptools to support pyproject.toml configuration
+    "setuptools>=61.0.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = 'hashwire'
 dynamic = [
@@ -6,17 +14,20 @@ dynamic = [
 description = 'Hashwire creates a optimized hash multichain commitment'
 readme = 'README.md'
 authors = [
-    { name = 'Hugo Labraaten', email='hugokinner@gmail.com' },
+    { name = 'Hugo Labraaten', email='hugokinner@gmail.com' }
 ]
-license = {file = 'LICENSE'},
+license = {file = 'LICENSE'}
 dependencies = [
 ]
 classifiers = [
     'Development Status :: 4 - Beta',
     'License :: OSI Approved :: MIT License',
-    "Programming Language :: Python"
+    "Programming Language :: Python",
     'Programming Language :: Python :: 3',
 ]
+
+[tool.poetry]
+readme = 'README.md'
 
 [project.urls]
 repository = 'https://github.com/Hugloss/hashWire'

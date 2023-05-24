@@ -1,1 +1,1 @@
-from hash import hash
+from hashwire.hash import HashChains

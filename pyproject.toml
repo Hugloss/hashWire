@@ -8,9 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = 'hashwire'
-dynamic = [
-    'version'
-]
+version = '0.0.2'
 description = 'Hashwire creates a optimized hash multichain commitment'
 readme = 'README.md'
 authors = [
@@ -22,8 +20,8 @@ dependencies = [
 classifiers = [
     'Development Status :: 4 - Beta',
     'License :: OSI Approved :: MIT License',
-    "Programming Language :: Python",
     'Programming Language :: Python :: 3',
+    'Operating System :: OS Independent',
 ]
 
 [tool.poetry]
@@ -31,3 +29,7 @@ readme = 'README.md'
 
 [project.urls]
 repository = 'https://github.com/Hugloss/hashWire'
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["hashwire*"]

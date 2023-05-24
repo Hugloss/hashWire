@@ -31,14 +31,15 @@ def get_hash_chain(num_len, seed=None):
 # %%
 
 # Hash multichains is an hash chain per digit position.
-def get_hash_multichain(int_value):
+def get_hash_multichain(int_value, seeds=None):
     num_digits = math.ceil(math.log10(int_value+1))
 
     # generate seed and multi_hash_chain using dictionary comprehension
-    seed = [get_seed() for _ in range(num_digits)]
-    hash_multichain = {i: get_hash_chain(10, seed[i])[0] for i in range(num_digits)}
+    if not seeds:
+        seeds = [get_seed() for _ in range(num_digits)]
+    hash_multichain = {i: get_hash_chain(10, seeds[i])[0] for i in range(num_digits)}
 
-    return hash_multichain, seed
+    return hash_multichain, seeds
 
 
 # MDP
@@ -130,9 +131,17 @@ class HashChains:
                 (len(seeds) == len(hash_chains)):
             self.seeds = seeds
             self.hash_chains = hash_chains
+        elif (seeds and not hash_chains):
+            # update hashchain when seed is changed
+            # mdp must be set before this is used!
+            self.create_hash_chains(self.mdp[0], seeds)
 
-    def create_hash_chains(self, int_value):
-        h, s = get_hash_multichain(int_value)
+    def create_hash_chains(self, int_value, seeds=None):
+        if seeds:
+            h, s = get_hash_multichain(int_value, seeds)
+        else:
+            h, s = get_hash_multichain(int_value)
+        # set values
         self.set_hash_chains(s, h)
 
     def create_mdp_list(self, int_value):

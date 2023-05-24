@@ -75,10 +75,10 @@ Examples how a sequence of digits can be presented with hashwire and how hash mu
 
 Introduction to hashwire and hash chains is found here:
 
-
+[Hashwire introduction](https://github.com/Hugloss/CryptoDetails/blob/main/Hashwire_01_basic.ipynb)
 
 Example that generate the code above, when seed is known, is found here:
-
-
+[Code in this readme file](https://github.com/Hugloss/CryptoDetails/blob/main/Hashwire_02_readme.ipynb)
 
 Another example when seed is generated:
+[Basic example](https://github.com/Hugloss/CryptoDetails/blob/main/Hashwire_03_lib.ipynb)
